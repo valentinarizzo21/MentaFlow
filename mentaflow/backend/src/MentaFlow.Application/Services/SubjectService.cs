@@ -40,9 +40,13 @@ public class SubjectService(IAppDbContext db)
         {
             UserId = userId,
             Name = request.Name,
+            Code = request.Code,
             Color = request.Color,
             Difficulty = request.Difficulty,
             Priority = request.Priority,
+            AcademicStatus = request.AcademicStatus,
+            Cfu = request.Cfu,
+            Year = request.Year,
             ExamDate = request.ExamDate,
             CreatedAt = DateTime.UtcNow,
             UpdatedAt = DateTime.UtcNow
@@ -61,9 +65,13 @@ public class SubjectService(IAppDbContext db)
             return ApiResponse<SubjectDto>.Fail("Materia non trovata.");
 
         if (request.Name is not null) subject.Name = request.Name;
+        if (request.Code is not null) subject.Code = request.Code;
         if (request.Color is not null) subject.Color = request.Color;
         if (request.Difficulty.HasValue) subject.Difficulty = request.Difficulty.Value;
         if (request.Priority.HasValue) subject.Priority = request.Priority.Value;
+        if (request.AcademicStatus.HasValue) subject.AcademicStatus = request.AcademicStatus.Value;
+        if (request.Cfu.HasValue) subject.Cfu = request.Cfu.Value;
+        if (request.Year.HasValue) subject.Year = request.Year.Value;
         if (request.ExamDate.HasValue) subject.ExamDate = request.ExamDate;
         if (request.IsArchived.HasValue) subject.IsArchived = request.IsArchived.Value;
         subject.UpdatedAt = DateTime.UtcNow;
@@ -92,9 +100,13 @@ public class SubjectService(IAppDbContext db)
     {
         Id = s.Id,
         Name = s.Name,
+        Code = s.Code,
         Color = s.Color,
         Difficulty = s.Difficulty.ToString(),
         Priority = s.Priority.ToString(),
+        AcademicStatus = s.AcademicStatus.ToString(),
+        Cfu = s.Cfu,
+        Year = s.Year,
         ExamDate = s.ExamDate,
         IsArchived = s.IsArchived,
         AttachmentsCount = s.Attachments?.Count ?? 0,

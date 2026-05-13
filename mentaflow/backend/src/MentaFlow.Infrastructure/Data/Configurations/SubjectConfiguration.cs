@@ -13,9 +13,11 @@ public class SubjectConfiguration : IEntityTypeConfiguration<Subject>
         builder.HasKey(s => s.Id);
 
         builder.Property(s => s.Name).HasMaxLength(100).IsRequired();
+        builder.Property(s => s.Code).HasMaxLength(20);
         builder.Property(s => s.Color).HasMaxLength(7).HasDefaultValue("#FFB7C5");
         builder.Property(s => s.Difficulty).HasConversion<string>().HasMaxLength(10);
         builder.Property(s => s.Priority).HasConversion<string>().HasMaxLength(10);
+        builder.Property(s => s.AcademicStatus).HasConversion<string>().HasMaxLength(15);
 
         builder.HasIndex(s => s.UserId);
         builder.HasIndex(s => new { s.UserId, s.IsArchived });
