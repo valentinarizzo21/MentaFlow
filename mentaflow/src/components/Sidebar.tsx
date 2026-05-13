@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
-import { 
-  LayoutDashboard, 
-  BookOpen, 
-  Calendar, 
-  CheckSquare, 
-  BarChart3, 
-  Settings as SettingsIcon, 
+import {
+  LayoutDashboard,
+  BookOpen,
+  Calendar,
+  CheckSquare,
+  BarChart3,
+  Settings as SettingsIcon,
   Zap,
   LogOut,
-  BrainCircuit
+  BrainCircuit,
+  Shield
 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useAuth } from '../context/AuthContext';
 
 interface SidebarProps {
   activeTab: string;
@@ -18,6 +19,8 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
+  const { user, logout, isAdmin } = useAuth();
+
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'subjects', label: 'Materie', icon: BookOpen },
@@ -25,10 +28,12 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
     { id: 'tasks', label: 'Task List', icon: CheckSquare },
     { id: 'stats', label: 'Statistiche', icon: BarChart3 },
     { id: 'ai', label: 'Menta AI', icon: BrainCircuit },
+    ...(isAdmin ? [{ id: 'admin', label: 'Admin', icon: Shield }] : []),
   ];
 
   return (
     <div className="fixed left-0 top-0 h-screen w-20 lg:w-64 bg-white/40 backdrop-blur-xl border-r border-pink-100/50 p-4 flex flex-col gap-8">
+      {/* Logo */}
       <div className="flex items-center gap-3 px-2 py-4">
         <div className="w-10 h-10 bg-gradient-to-br from-[#FFB7C5] to-[#E0BBE4] rounded-xl flex items-center justify-center shadow-[0_8px_20px_rgba(255,183,197,0.4)]">
           <Zap className="text-white fill-white" size={24} />
@@ -38,21 +43,24 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
         </span>
       </div>
 
+      {/* Nav */}
       <nav className="flex-1 flex flex-col gap-2">
         {menuItems.map((item) => (
           <button
             key={item.id}
             onClick={() => setActiveTab(item.id)}
             className={`flex items-center gap-4 px-4 py-3 rounded-2xl transition-all duration-300 group relative ${
-              activeTab === item.id 
-              ? 'bg-white text-pink-400 shadow-sm border border-pink-50' 
-              : 'text-slate-400 hover:text-pink-300 hover:bg-white/50'
+              activeTab === item.id
+                ? 'bg-white text-pink-400 shadow-sm border border-pink-50'
+                : item.id === 'admin'
+                ? 'text-purple-400 hover:text-purple-500 hover:bg-purple-50/50'
+                : 'text-slate-400 hover:text-pink-300 hover:bg-white/50'
             }`}
           >
             <item.icon size={22} className={activeTab === item.id ? 'drop-shadow-[0_0_5px_rgba(255,183,197,0.5)]' : ''} />
             <span className="hidden lg:block font-medium">{item.label}</span>
             {activeTab === item.id && (
-              <motion.div 
+              <motion.div
                 layoutId="sidebar-active"
                 className="absolute left-0 w-1.5 h-6 bg-pink-300 rounded-r-full shadow-[0_0_10px_rgba(255,183,197,0.8)]"
               />
@@ -61,8 +69,24 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
         ))}
       </nav>
 
+      {/* Bottom */}
       <div className="mt-auto flex flex-col gap-2">
-        <button 
+        {/* User info */}
+        {user && (
+          <div className="hidden lg:flex items-center gap-3 px-4 py-3 mb-1">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-200 to-purple-200 flex items-center justify-center text-white text-xs font-bold shrink-0">
+              {user.username[0].toUpperCase()}
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-bold text-slate-700 truncate">{user.username}</p>
+              <p className="text-xs text-slate-400 truncate">
+                {user.role === 'Admin' ? '🛡️ Admin' : '🎓 Studente'}
+              </p>
+            </div>
+          </div>
+        )}
+
+        <button
           onClick={() => setActiveTab('settings')}
           className={`flex items-center gap-4 px-4 py-3 rounded-2xl transition-colors ${
             activeTab === 'settings' ? 'bg-white text-pink-400 shadow-sm' : 'text-slate-400 hover:text-slate-600'
@@ -71,11 +95,9 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
           <SettingsIcon size={22} />
           <span className="hidden lg:block font-medium">Impostazioni</span>
         </button>
-        <button 
-          onClick={() => {
-            localStorage.removeItem('aether_token');
-            window.location.reload();
-          }}
+
+        <button
+          onClick={logout}
           className="flex items-center gap-4 px-4 py-3 rounded-2xl text-rose-300 hover:text-rose-500 transition-colors"
         >
           <LogOut size={22} />

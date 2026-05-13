@@ -23,6 +23,7 @@ public class AuthService(IAppDbContext db, IJwtService jwt, IPasswordService pas
             Username = request.Username.ToLower(),
             Email = request.Email.ToLower(),
             PasswordHash = passwords.Hash(request.Password),
+            Role = request.Role,
             CreatedAt = DateTime.UtcNow,
             UpdatedAt = DateTime.UtcNow,
             Stats = new UserStats()
@@ -52,6 +53,7 @@ public class AuthService(IAppDbContext db, IJwtService jwt, IPasswordService pas
         Token = token,
         Username = user.Username,
         Email = user.Email,
+        Role = user.Role.ToString(),
         ExpiresAt = DateTime.UtcNow.AddDays(1)
     };
 }
