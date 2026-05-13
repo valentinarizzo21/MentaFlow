@@ -1,0 +1,83 @@
+[
+  {
+    "id": "task-001",
+    "subjectId": "subj-001",
+    "title": "Ripassare teorema di Lagrange",
+    "description": "Studiare il teorema e fare 10 esercizi dal libro pag. 132-140",
+    "status": "in-progress",
+    "priority": "High",
+    "dueDate": "2026-05-15"
+  },
+  {
+    "id": "task-002",
+    "subjectId": "subj-001",
+    "title": "Esercizi su serie di Taylor",
+    "description": "Completare gli esercizi del capitolo 7",
+    "status": "todo",
+    "priority": "High",
+    "dueDate": "2026-05-18"
+  },
+  {
+    "id": "task-003",
+    "subjectId": "subj-002",
+    "title": "Problemi di cinematica",
+    "description": "Pagine 45-52 del Mazzoldi",
+    "status": "completed",
+    "priority": "Medium",
+    "dueDate": "2026-05-14"
+  },
+  {
+    "id": "task-004",
+    "subjectId": "subj-002",
+    "title": "Laboratorio relazione 3",
+    "description": "Scrivere la relazione dell'esperimento sul pendolo",
+    "status": "todo",
+    "priority": "High",
+    "dueDate": "2026-05-20"
+  },
+  {
+    "id": "task-005",
+    "subjectId": "subj-003",
+    "title": "Implementare lista concatenata",
+    "description": "Progetto di programmazione - strutture dati",
+    "status": "in-progress",
+    "priority": "High",
+    "dueDate": "2026-05-17"
+  },
+  {
+    "id": "task-006",
+    "subjectId": "subj-003",
+    "title": "Studiare template C++",
+    "description": "Capitolo 15 del Lippman",
+    "status": "todo",
+    "priority": "Medium",
+    "dueDate": "2026-05-22"
+  },
+  {
+    "id": "task-007",
+    "subjectId": "subj-004",
+    "title": "Nomenclatura IUPAC",
+    "description": "Ripasso regole di nomenclatura",
+    "status": "completed",
+    "priority": "Low",
+    "dueDate": "2026-05-13"
+  },
+  {
+    "id": "task-008",
+    "subjectId": "subj-005",
+    "title": "Diagonalizzazione matrici",
+    "description": "Esercizi pag. 88-95",
+    "status": "todo",
+    "priority": "Medium",
+    "dueDate": "2026-05-25"
+  },
+  {
+    "id": "task-009",
+    "subjectId": null,
+    "title": "Prenotare sessione esame Analisi",
+    "description": "Accedere al portale universitario e prenotare l'appello del 15 giugno",
+    "status": "todo",
+    "priority": "High",
+    "dueDate": "2026-05-31"
+  }
+]

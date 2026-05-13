@@ -1,0 +1,45 @@
+{
+  "user": {
+    "id": "user-001",
+    "name": "Valentina",
+    "email": "test@mentaflow.it",
+    "avatarUrl": null,
+    "joinedAt": "2026-01-10"
+  },
+  "stats": {
+    "totalHours": 12.5,
+    "streak": 5,
+    "xp": 2450,
+    "level": 4,
+    "weeklyTarget": 1200,
+    "tasksCompleted": 42,
+    "tasksTotal": 50,
+    "examsPassedCount": 6,
+    "examsTotalCount": 10,
+    "nextExam": {
+      "subjectId": "subj-001",
+      "name": "Analisi Matematica I",
+      "date": "2026-06-15"
+    }
+  },
+  "weeklyProgress": [
+    { "day": "Lun", "hours": 4.0, "date": "2026-05-06" },
+    { "day": "Mar", "hours": 6.0, "date": "2026-05-07" },
+    { "day": "Mer", "hours": 3.0, "date": "2026-05-08" },
+    { "day": "Gio", "hours": 7.0, "date": "2026-05-09" },
+    { "day": "Ven", "hours": 5.0, "date": "2026-05-10" },
+    { "day": "Sab", "hours": 8.0, "date": "2026-05-11" },
+    { "day": "Dom", "hours": 2.0, "date": "2026-05-12" }
+  ],
+  "dailyGoals": [
+    { "id": "goal-001", "subjectId": "subj-001", "title": "Studio Analisi I", "targetMinutes": 120, "completedMinutes": 90 },
+    { "id": "goal-002", "subjectId": "subj-002", "title": "Esercizi Fisica", "targetMinutes": 60, "completedMinutes": 18 },
+    { "id": "goal-003", "subjectId": "subj-003", "title": "Coding C++", "targetMinutes": 90, "completedMinutes": 90 }
+  ],
+  "badges": [
+    { "id": "badge-001", "name": "First Step", "description": "Prima sessione di studio completata", "icon": "🎯", "unlockedAt": "2026-01-10" },
+    { "id": "badge-002", "name": "On Fire", "description": "5 giorni di streak consecutivi", "icon": "🔥", "unlockedAt": "2026-05-12" },
+    { "id": "badge-003", "name": "Night Owl", "description": "Hai studiato dopo mezzanotte", "icon": "🦉", "unlockedAt": "2026-02-14" },
+    { "id": "badge-004", "name": "Century", "description": "100 ore di studio totali", "icon": "💯", "unlockedAt": null }
+  ]
+}

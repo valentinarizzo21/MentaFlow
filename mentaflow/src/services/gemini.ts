@@ -1,8 +1,10 @@
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const apiKey = process.env.GEMINI_API_KEY;
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 export async function getStudyAdvice(stats: any, currentSession: any) {
+  if (!ai) return "Configura la tua API key Gemini per ricevere consigli AI.";
   const model = "gemini-3-flash-preview";
   const prompt = `
     Sei un assistente AI esperto in produttività e studio universitario per l'app "MentaFlow".
@@ -29,8 +31,9 @@ export async function getStudyAdvice(stats: any, currentSession: any) {
 }
 
 export async function chatWithAi(history: any[], message: string) {
+  if (!ai) return "Configura la tua API key Gemini per usare la chat AI.";
   const model = "gemini-3-flash-preview";
-  
+
   try {
     const response = await ai.models.generateContent({
       model,
@@ -50,6 +53,7 @@ export async function chatWithAi(history: any[], message: string) {
 }
 
 export async function generateQuiz(notes: string) {
+  if (!ai) return [];
   const model = "gemini-3-flash-preview";
   const prompt = `
     Genera 3 domande a scelta multipla basate sui seguenti appunti:

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "subj-001",
+    "name": "Analisi Matematica I",
+    "color": "#FFB7C5",
+    "difficulty": "High",
+    "priority": "High",
+    "examDate": "2026-06-15",
+    "notes": [
+      { "id": "note-001", "name": "Limiti e Continuità.pdf", "url": "/uploads/limiti.pdf", "type": "pdf" },
+      { "id": "note-002", "name": "Derivate - Teoria.pdf", "url": "/uploads/derivate.pdf", "type": "pdf" },
+      { "id": "note-003", "name": "Integrali definiti.pdf", "url": "/uploads/integrali.pdf", "type": "pdf" }
+    ],
+    "links": [
+      "https://www.youtube.com/watch?v=analisi1",
+      "https://www.matematicamente.it/analisi"
+    ]
+  },
+  {
+    "id": "subj-002",
+    "name": "Fisica Generale I",
+    "color": "#D2B3FF",
+    "difficulty": "High",
+    "priority": "Medium",
+    "examDate": "2026-06-28",
+    "notes": [
+      { "id": "note-004", "name": "Cinematica.pdf", "url": "/uploads/cinematica.pdf", "type": "pdf" },
+      { "id": "note-005", "name": "Dinamica e Forze.pdf", "url": "/uploads/dinamica.pdf", "type": "pdf" }
+    ],
+    "links": [
+      "https://www.feynmanlectures.caltech.edu"
+    ]
+  },
+  {
+    "id": "subj-003",
+    "name": "Programmazione C++",
+    "color": "#B5EAD7",
+    "difficulty": "Medium",
+    "priority": "High",
+    "examDate": "2026-07-05",
+    "notes": [
+      { "id": "note-006", "name": "Puntatori e Memoria.pdf", "url": "/uploads/puntatori.pdf", "type": "pdf" },
+      { "id": "note-007", "name": "OOP - Classi.pdf", "url": "/uploads/oop.pdf", "type": "pdf" },
+      { "id": "note-008", "name": "STL.pdf", "url": "/uploads/stl.pdf", "type": "pdf" }
+    ],
+    "links": [
+      "https://cppreference.com",
+      "https://learncpp.com"
+    ]
+  },
+  {
+    "id": "subj-004",
+    "name": "Chimica Organica",
+    "color": "#FFDAC1",
+    "difficulty": "Low",
+    "priority": "Low",
+    "examDate": "2026-07-12",
+    "notes": [
+      { "id": "note-009", "name": "Gruppi Funzionali.pdf", "url": "/uploads/gruppi.pdf", "type": "pdf" }
+    ],
+    "links": []
+  },
+  {
+    "id": "subj-005",
+    "name": "Algebra Lineare",
+    "color": "#C7CEEA",
+    "difficulty": "Medium",
+    "priority": "Medium",
+    "examDate": "2026-07-20",
+    "notes": [
+      { "id": "note-010", "name": "Spazi Vettoriali.pdf", "url": "/uploads/vettori.pdf", "type": "pdf" },
+      { "id": "note-011", "name": "Matrici e Determinanti.pdf", "url": "/uploads/matrici.pdf", "type": "pdf" }
+    ],
+    "links": [
+      "https://www.3blue1brown.com/topics/linear-algebra"
+    ]
+  }
+]

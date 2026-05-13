@@ -1,0 +1,12 @@
+[
+  { "id": "sess-001", "subjectId": "subj-001", "duration": 90,  "timestamp": "2026-05-12T09:00:00Z" },
+  { "id": "sess-002", "subjectId": "subj-002", "duration": 60,  "timestamp": "2026-05-12T11:00:00Z" },
+  { "id": "sess-003", "subjectId": "subj-003", "duration": 120, "timestamp": "2026-05-12T15:00:00Z" },
+  { "id": "sess-004", "subjectId": "subj-001", "duration": 75,  "timestamp": "2026-05-11T10:00:00Z" },
+  { "id": "sess-005", "subjectId": "subj-005", "duration": 45,  "timestamp": "2026-05-11T14:00:00Z" },
+  { "id": "sess-006", "subjectId": "subj-002", "duration": 90,  "timestamp": "2026-05-10T09:30:00Z" },
+  { "id": "sess-007", "subjectId": "subj-003", "duration": 60,  "timestamp": "2026-05-10T16:00:00Z" },
+  { "id": "sess-008", "subjectId": "subj-001", "duration": 120, "timestamp": "2026-05-09T08:00:00Z" },
+  { "id": "sess-009", "subjectId": "subj-004", "duration": 30,  "timestamp": "2026-05-09T14:00:00Z" },
+  { "id": "sess-010", "subjectId": "subj-005", "duration": 90,  "timestamp": "2026-05-08T10:00:00Z" }
+]
