@@ -33,7 +33,7 @@ public class SubjectConfiguration : IEntityTypeConfiguration<Subject>
         builder.HasMany(s => s.Tasks)
             .WithOne(t => t.Subject)
             .HasForeignKey(t => t.SubjectId)
-            .OnDelete(DeleteBehavior.SetNull);
+            .OnDelete(DeleteBehavior.ClientSetNull);
 
         builder.HasMany(s => s.StudySessions)
             .WithOne(ss => ss.Subject)

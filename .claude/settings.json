@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(git commit *)",
+      "Bash(git commit)"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /Users/mac/Desktop/MentaFlow-1/mentaflow && npm run lint 2>&1 | head -60 | { output=$(cat); if echo \"$output\" | grep -q 'error TS'; then echo \"{\\\"systemMessage\\\": \\\"⚠️  Build check: errori TypeScript trovati:\\\\n$(echo $output | head -c 800)\\\"}\"; else echo \"{\\\"systemMessage\\\": \\\"✅ Build check OK — nessun errore TypeScript.\\\"}\"; fi }",
+            "timeout": 30,
+            "statusMessage": "Controllo build TypeScript..."
+          }
+        ]
+      }
+    ]
+  }
+}

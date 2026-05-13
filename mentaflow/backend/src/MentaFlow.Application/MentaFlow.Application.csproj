@@ -8,6 +8,6 @@
     <ProjectReference Include="..\MentaFlow.Domain\MentaFlow.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="9.0.*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.6" />
   </ItemGroup>
 </Project>

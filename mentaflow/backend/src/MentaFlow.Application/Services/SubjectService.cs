@@ -78,6 +78,10 @@ public class SubjectService(IAppDbContext db)
         if (subject is null)
             return ApiResponse.Fail("Materia non trovata.");
 
+        // Unlink tasks before deleting (ClientSetNull requires explicit nulling via EF)
+        var linkedTasks = await db.Tasks.Where(t => t.SubjectId == id).ToListAsync();
+        foreach (var t in linkedTasks) t.SubjectId = null;
+
         db.Subjects.Remove(subject);
         await db.SaveChangesAsync();
 

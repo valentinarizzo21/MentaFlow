@@ -57,6 +57,11 @@ public class DailyGoalConfiguration : IEntityTypeConfiguration<DailyGoal>
         builder.HasKey(g => g.Id);
         builder.Property(g => g.Title).HasMaxLength(200).IsRequired();
         builder.HasIndex(g => new { g.UserId, g.Date });
+
+        builder.HasOne(g => g.Subject)
+            .WithMany()
+            .HasForeignKey(g => g.SubjectId)
+            .OnDelete(DeleteBehavior.NoAction);
     }
 }
 
@@ -70,5 +75,10 @@ public class PlannerEventConfiguration : IEntityTypeConfiguration<PlannerEvent>
         builder.Property(e => e.Description).HasMaxLength(1000);
         builder.Property(e => e.Color).HasMaxLength(7);
         builder.HasIndex(e => new { e.UserId, e.StartTime });
+
+        builder.HasOne(e => e.Subject)
+            .WithMany()
+            .HasForeignKey(e => e.SubjectId)
+            .OnDelete(DeleteBehavior.NoAction);
     }
 }

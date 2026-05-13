@@ -1,5 +1,6 @@
 using MentaFlow.Domain.Common;
 using MentaFlow.Domain.Enums;
+using TaskStatus = MentaFlow.Domain.Enums.TaskStatus;
 
 namespace MentaFlow.Domain.Entities;
 
